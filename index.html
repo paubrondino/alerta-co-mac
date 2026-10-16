@@ -1,48 +1,41 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alerta CO - MAC del dispositivo</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f2f6fc;
-      color: #17324d;
-      text-align: center;
-      padding: 40px 15px;
-    }
-
-    .card {
-      max-width: 400px;
-      margin: auto;
-      padding: 30px 20px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px #0002;
-    }
-
-    h1 {
-      color: #087eaa;
-    }
-
-    .mac {
-      font-size: 21px;
-      font-weight: bold;
-      padding: 15px;
-      background: #e5f4f9;
-      border-radius: 8px;
-      overflow-wrap: anywhere;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alerta CO</title>
+    <style>
+        body {
+            background: #071426;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        main {
+            background: #10243d;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            width: 80%;
+            max-width: 360px;
+        }
+        h1 { color: #22d3ee; }
+        .mac {
+            background: #071426;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-wrap: anywhere;
+        }
+    </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Alerta CO</h1>
-    <p>MAC de tu dispositivo</p>
-    <div class="mac">78:1c:3c:f5:80:cc</div>
-  </div>
+    <main>
+        <h1>Alerta CO</h1>
+        <p>Dirección MAC de tu dispositivo</p>
+        <div class="mac">78:1C:3C:F5:80:CC</div>
+    </main>
 </body>
 </html>
-```
