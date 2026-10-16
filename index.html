@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alerta CO - MAC del dispositivo</title>
+  <title>Alerta CO</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,7 +13,6 @@
       text-align: center;
       padding: 40px 15px;
     }
-
     .tarjeta {
       max-width: 400px;
       margin: auto;
@@ -22,11 +21,7 @@
       border-radius: 15px;
       box-shadow: 0 4px 15px #0002;
     }
-
-    h1 {
-      color: #087eaa;
-    }
-
+    h1 { color: #087eaa; }
     .mac {
       overflow-wrap: anywhere;
       font-size: 21px;
@@ -47,15 +42,12 @@
   <script>
     const parametros = new URLSearchParams(window.location.search);
     const mac = parametros.get("mac");
-
     const formatoMAC = /^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$/;
 
-    if (mac && formatoMAC.test(mac)) {
-      document.getElementById("mac").textContent = mac.toUpperCase();
-    } else {
-      document.getElementById("mac").textContent =
-        "No se indicó una MAC válida.";
-    }
+    document.getElementById("mac").textContent =
+      mac && formatoMAC.test(mac)
+        ? mac.toUpperCase()
+        : "No se indicó una MAC válida.";
   </script>
 </body>
 </html>
