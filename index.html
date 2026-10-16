@@ -4,44 +4,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alerta CO - MAC del dispositivo</title>
+  <title>Alerta CO | Ficha técnica</title>
   <style>
+    * { box-sizing: border-box; }
+
     body {
+      margin: 0;
+      padding: 24px 14px;
       font-family: Arial, sans-serif;
-      background: #f2f6fc;
+      background: #edf4f8;
       color: #17324d;
-      text-align: center;
-      padding: 40px 15px;
     }
 
-    .card {
-      max-width: 400px;
+    .contenedor {
+      max-width: 560px;
       margin: auto;
-      padding: 30px 20px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px #0002;
     }
 
-    h1 {
+    header {
+      background: #102c46;
+      color: white;
+      padding: 28px 22px;
+      border-radius: 18px 18px 0 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin: 0;
+      color: #aeeafa;
+      line-height: 1.5;
+    }
+
+    main {
+      background: white;
+      padding: 22px;
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 5px 20px #17324d15;
+    }
+
+    h2 {
+      font-size: 19px;
       color: #087eaa;
+      margin: 24px 0 12px;
+    }
+
+    h2:first-child { margin-top: 0; }
+
+    .componente {
+      padding: 13px 0;
+      border-bottom: 1px solid #e4edf2;
+    }
+
+    .componente:last-child { border-bottom: 0; }
+
+    .componente h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+
+    .componente p, .descripcion {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 14px;
+      color: #526779;
     }
 
     .mac {
-      font-size: 21px;
+      background: #e7f5fa;
+      border: 1px solid #c9eaf4;
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 20px;
       font-weight: bold;
-      padding: 15px;
-      background: #e5f4f9;
-      border-radius: 8px;
       overflow-wrap: anywhere;
+      text-align: center;
+      color: #075d7b;
+    }
+
+    .aviso {
+      margin-top: 22px;
+      background: #fff7e5;
+      padding: 13px;
+      border-radius: 9px;
+      color: #70551c;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px 5px 4px;
+      color: #6c8190;
+      font-size: 12px;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Alerta CO</h1>
-    <p>MAC de tu dispositivo</p>
-    <div class="mac">78:1c:3c:f5:80:cc</div>
+  <div class="contenedor">
+    <header>
+      <h1>ALERTA CO</h1>
+      <p>Ficha técnica del dispositivo</p>
+      <p>Sistema de monitoreo de monóxido de carbono</p>
+    </header>
+
+    <main>
+      <h2>Descripción del producto</h2>
+      <p class="descripcion">
+        Alerta CO es un prototipo que utiliza un sensor MQ-7
+        y una placa ESP32 para procesar lecturas y transmitir
+        información a una plataforma web mediante Wi-Fi.
+      </p>
+
+      <h2>Componentes principales</h2>
+
+      <div class="componente">
+        <h3>Sensor MQ-7</h3>
+        <p>Detecta gases y responde a la presencia de monóxido
+        de carbono. Sus lecturas requieren calibración.</p>
+      </div>
+
+      <div class="componente">
+        <h3>Placa ESP32</h3>
+        <p>Procesa las lecturas y permite enviar información
+        a la plataforma mediante Wi-Fi.</p>
+      </div>
+
+      <div class="componente">
+        <h3>Pantalla OLED</h3>
+        <p>Muestra mensajes y estados del dispositivo según
+        la programación implementada.</p>
+      </div>
+
+      <div class="componente">
+        <h3>LED indicador</h3>
+        <p>Señala estados del sistema según la configuración
+        programada.</p>
+      </div>
+
+      <div class="componente">
+        <h3>Zumbador (buzzer)</h3>
+        <p>Emite una señal sonora cuando se cumplen las
+        condiciones establecidas en el programa.</p>
+      </div>
+
+      <h2>Conectividad</h2>
+      <p class="descripcion">
+        Comunicación Wi-Fi mediante ESP32 y envío de
+        información a una plataforma web.
+      </p>
+
+      <h2>MAC del dispositivo</h2>
+      <div class="mac" id="mac">78:1C:3C:F5:80:CC</div>
+
+      <div class="aviso">
+        <strong>Importante:</strong> este equipo es un prototipo
+        educativo y no reemplaza un detector de monóxido de
+        carbono certificado ni debe utilizarse como único
+        medio de protección.
+      </div>
+    </main>
+
+    <footer>
+      ALERTA CO · Información del dispositivo
+    </footer>
   </div>
+
+  <script>
+    const parametros = new URLSearchParams(window.location.search);
+    const mac = parametros.get("mac");
+    const formatoMAC = /^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$/;
+
+    if (mac && formatoMAC.test(mac)) {
+      document.getElementById("mac").textContent = mac.toUpperCase();
+    }
+  </script>
 </body>
 </html>
