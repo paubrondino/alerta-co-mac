@@ -4,284 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alerta CO | Ficha técnica</title>
-
+  <title>Alerta CO - MAC del dispositivo</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0;
-      padding: 25px 15px;
       font-family: Arial, sans-serif;
-      background: #edf4f8;
+      background: #f2f6fc;
       color: #17324d;
-    }
-
-    .contenedor {
-      max-width: 650px;
-      margin: auto;
-    }
-
-    header {
-      background: #102c46;
-      color: white;
-      padding: 30px 20px;
-      border-radius: 18px 18px 0 0;
       text-align: center;
+      padding: 40px 15px;
     }
 
-    header h1 {
-      margin: 0 0 10px;
-      font-size: 30px;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      margin: 5px 0;
-      color: #aeeafa;
-      line-height: 1.5;
-    }
-
-    main {
+    .card {
+      max-width: 400px;
+      margin: auto;
+      padding: 30px 20px;
       background: white;
-      padding: 24px;
-      border-radius: 0 0 18px 18px;
-      box-shadow: 0 5px 20px #17324d18;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px #0002;
     }
 
-    h2 {
+    h1 {
       color: #087eaa;
-      font-size: 20px;
-      margin: 25px 0 12px;
-    }
-
-    h2:first-child {
-      margin-top: 0;
-    }
-
-    .descripcion {
-      color: #526779;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .componentes {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 15px;
-    }
-
-    .componente {
-      overflow: hidden;
-      border: 1px solid #dceaf1;
-      border-radius: 12px;
-      background: #f8fbfd;
-    }
-
-    .componente img {
-      width: 100%;
-      height: 145px;
-      object-fit: contain;
-      padding: 12px;
-      background: white;
-      display: block;
-    }
-
-    .componente-texto {
-      padding: 12px;
-    }
-
-    .componente h3 {
-      margin: 0 0 8px;
-      color: #075d7b;
-      font-size: 16px;
-    }
-
-    .componente p {
-      margin: 0;
-      font-size: 13px;
-      color: #526779;
-      line-height: 1.6;
     }
 
     .mac {
-      background: #e5f4f9;
-      border: 1px solid #bde5f0;
-      border-radius: 10px;
-      padding: 18px 12px;
-      text-align: center;
       font-size: 21px;
       font-weight: bold;
-      color: #075d7b;
-      overflow-wrap: anywhere;
-    }
-
-    .conexion {
-      background: #f0f8fb;
-      border-left: 4px solid #087eaa;
-      border-radius: 6px;
       padding: 15px;
-      color: #526779;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px 5px 5px;
-      color: #6c8190;
-      font-size: 12px;
-    }
-
-    @media (max-width: 420px) {
-      main {
-        padding: 17px;
-      }
-
-      .componentes {
-        grid-template-columns: 1fr;
-      }
-
-      .componente img {
-        height: 180px;
-      }
+      background: #e5f4f9;
+      border-radius: 8px;
+      overflow-wrap: anywhere;
     }
   </style>
 </head>
-
 <body>
-  <div class="contenedor">
-
-    <header>
-      <h1>ALERTA CO</h1>
-      <p>Ficha técnica del dispositivo</p>
-      <p>Sistema de monitoreo de monóxido de carbono</p>
-    </header>
-
-    <main>
-
-      <h2>Descripción del producto</h2>
-      <p class="descripcion">
-        Alerta CO es un prototipo de monitoreo de monóxido
-        de carbono. Utiliza un sensor MQ-7 y una placa ESP32
-        para procesar las lecturas y transmitir información
-        a una plataforma web mediante Wi-Fi.
-      </p>
-
-      <h2>Componentes principales</h2>
-
-      <div class="componentes">
-
-        <div class="componente">
-          <img
-            src="https://eltrokart.com/media/images/2025/4/MQ-7.jpg"
-            alt="Sensor de gas MQ-7"
-            loading="lazy"
-          >
-          <div class="componente-texto">
-            <h3>Sensor MQ-7</h3>
-            <p>
-              Detecta la presencia de monóxido de carbono
-              mediante lecturas que procesa la placa.
-            </p>
-          </div>
-        </div>
-
-        <div class="componente">
-          <img
-            src="https://static.ticimax.cloud/cdn-cgi/image/width%3D0%2Cquality%3D85/75519/uploads/urunresimleri/buyuk/esp32-wifi-bluetooth-gelistirme-karti--73-5a4.jpg"
-            alt="Placa de desarrollo ESP32"
-            loading="lazy"
-          >
-          <div class="componente-texto">
-            <h3>Placa ESP32</h3>
-            <p>
-              Procesa las lecturas del sensor y permite
-              enviar información mediante Wi-Fi.
-            </p>
-          </div>
-        </div>
-
-        <div class="componente">
-          <img
-            src="https://i.ebayimg.com/images/g/pRkAAOSwAS9oC6aI/s-l1200.jpg"
-            alt="Pantalla OLED"
-            loading="lazy"
-          >
-          <div class="componente-texto">
-            <h3>Pantalla OLED</h3>
-            <p>
-              Muestra mensajes y estados del dispositivo
-              según la programación.
-            </p>
-          </div>
-        </div>
-
-        <div class="componente">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/LEDs.jpg/640px-LEDs.jpg"
-            alt="Diodos LED"
-            loading="lazy"
-          >
-          <div class="componente-texto">
-            <h3>LED indicador</h3>
-            <p>
-              Permite indicar diferentes estados del sistema
-              según la configuración programada.
-            </p>
-          </div>
-        </div>
-
-        <div class="componente">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Piezoelectric_buzzer.jpg/640px-Piezoelectric_buzzer.jpg"
-            alt="Zumbador electrónico"
-            loading="lazy"
-          >
-          <div class="componente-texto">
-            <h3>Buzzer</h3>
-            <p>
-              Emite una señal sonora cuando se cumplen
-              las condiciones establecidas en el programa.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-      <h2>Conectividad</h2>
-      <div class="conexion">
-        La placa ESP32 se conecta a una red Wi-Fi y envía
-        las lecturas a la plataforma web para su visualización
-        y seguimiento.
-      </div>
-
-      <h2>MAC del dispositivo</h2>
-      <div class="mac" id="mac">
-        78:1C:3C:F5:80:CC
-      </div>
-
-    </main>
-
-    <footer>
-      ALERTA CO · Información técnica del dispositivo
-    </footer>
-
+  <div class="card">
+    <h1>Alerta CO</h1>
+    <p>MAC de tu dispositivo</p>
+    <div class="mac">78:1c:3c:f5:80:cc</div>
   </div>
-
-  <script>
-    const parametros = new URLSearchParams(window.location.search);
-    const mac = parametros.get("mac");
-
-    const formatoMAC = /^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$/;
-
-    if (mac && formatoMAC.test(mac)) {
-      document.getElementById("mac").textContent =
-        mac.toUpperCase();
-    }
-  </script>
 </body>
 </html>
 ```
